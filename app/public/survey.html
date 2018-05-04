@@ -1,1 +1,221 @@
-survey.html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>FriendFinder</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <!-- Font Awesome Glyphicons -->
+ <!--   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"> -->
+</head>
+
+<body>
+    <!-- Modal -->
+    <div id="resultsModal" class="modal" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h2 class="modal-title"><strong>Below Is Your New Friend</strong></h2>
+                </div>
+                <div class="modal-body">
+                    <h2 id="friendName"></h2>
+                    <img id="friendPhoto" src="" alt="">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Survey -->
+    <div class="container">
+        <h2>Survey Questions</h2>
+        <hr>
+        <h3><strong>About You</strong></h3>
+        <h4>Name</h4>
+        <input type="text" name="" id="name">
+        <h4>Link to Photo Image</h4>
+        <input type="url" name="" id="photo" pattern="https?://.+">
+        <hr>
+        <h3><strong>Question 1</strong></h3>
+        <h4>I like to exercise.</h4>
+        <select data-placeholder=" " id="q1" class="validate">
+            <option value=""></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <h3><strong>Question 2</strong></h3>
+        <h4>I am a very talkative person.</h4>
+        <select data-placeholder=" " id="q2" class="validate">
+            <option value=""></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <h3><strong>Question 3</strong></h3>
+        <h4>I like to travel.</h4>
+        <select data-placeholder=" " id="q3" class="validate">
+            <option value=""></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <h3><strong>Question 4</strong></h3>
+        <h4>I enjoy reading.</h4>
+        <select data-placeholder=" " id="q4" class="validate">
+            <option value=""></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <h3><strong>Question 5</strong></h3>
+        <h4>I want to feel close to people to whom I am attracted.</h4>
+        <select data-placeholder=" " id="q5" class="validate">
+            <option value=""></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <h3><strong>Question 6</strong></h3>
+        <h4>Intimate relationships bring me great satisfaction.</h4>
+        <select data-placeholder=" " id="q6" class="validate">
+            <option value=""></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <h3><strong>Question 7</strong></h3>
+        <h4>I search for close intimate relationships. </h4>
+        <select data-placeholder=" " id="q7" class="validate">
+            <option value=""></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <h3><strong>Question 8</strong></h3>
+        <h4>It is important to me to form close relationships. </h4>
+        <select data-placeholder=" " id="q8" class="validate">        
+            <option value=""></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <h3><strong>Question 9</strong></h3>
+        <h4>Being honest and open with another person makes me feel closer to that person. </h4>
+        <select data-placeholder=" " id="q9" class="validate">
+            <option value=""></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <h3><strong>Question 10</strong></h3>
+        <h4>Being open and intimate with another person usually makes me feel good.</h4>
+        <select data-placeholder=" " id="q10" class="validate">
+            <option value=""></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <hr>
+        <button type="submit" class="btn btn-primary btn-lg" id="submit"></i>Submit</button>
+        <hr>
+        <footer class="footer ">
+            <div class="container ">
+                <p><a href="/api/friends ">API Friends List</a> | <a href="https://github.com/armthepit/Friend-Finder">GitHub Repo</a></p>
+            </div>
+        </footer>
+    </div>
+    <!-- Survey Javascript -->
+    <!-- Call the api to save the new information and search for a matching friend. Open a modal when a friend is found. -->
+    <script type="text/javascript ">
+    $('#submit').on("click ", function() {
+
+
+    	// Function to check all survery questions answered
+        function validateSurvey() {
+            var valid = true;
+
+            // Verify name
+            var name = $('#name').val();
+            if(name === ''){
+                valid=false;
+            }
+
+            // Verify photo url
+            var regex = /(http|https):\/\/(\w+:{0,1}\w*)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%!\-\/]))?/;
+            var photoUrl = $('#photo').val();
+            if((!regex .test(photoUrl))) {
+            	valid = false;
+            }
+
+            // Verify all other fields
+            $('.validate').each(function() {
+                    console.log($(this).val());
+                if($(this).val() === ""){
+                    valid = false;
+                }
+            });
+            return valid;
+        }
+
+        if (validateSurvey() === true) {
+            var friendInput = {
+                name: $('#name').val(),
+                photo: $('#photo').val(),
+                sex: $('#sex').val(),
+                scores: [
+                    $("#q1 ").val(),
+                    $("#q2 ").val(),
+                    $("#q3 ").val(),
+                    $("#q4 ").val(),
+                    $("#q5 ").val(),
+                    $("#q6 ").val(),
+                    $("#q7 ").val(),
+                    $("#q8 ").val(),
+                    $("#q9 ").val(),
+                    $("#q10 ").val()
+                ]
+            }
+            var currentURL = window.location.origin;
+            $.post(currentURL + "/api/friends ", friendInput, function(data) {
+                $("#friendName ").text(data.name);
+                $('#friendPhoto').attr("src", data.photo);
+                // Show the modal with your new friend
+                $("#resultsModal ").modal('toggle');
+            })
+        } else {
+            alert("Please check survey fields.");
+        }
+        return false;
+    });
+    </script>
+</body>
+
+</html>
